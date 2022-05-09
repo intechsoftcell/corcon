@@ -51,6 +51,17 @@ dependencies:
   flutter_easyloading: ^3.0.3
   toast: ^0.3.0
 
+  # pdf library
+  pdf: ^3.5.5 # changed from 3.7.4 to 3.5.5
+  # path provider
+  path_provider: ^2.0.9
+  # sqflite
+  sqflite: ^2.0.2+1
+  # intl
+  intl: ^0.17.0
+  # open pdf document
+  open_file: ^3.1.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -78,6 +89,8 @@ flutter:
     - assets/images/about_corcon.webp
     - assets/images/corcon_ogo.png
     - assets/icons/menu.png
+    - assets/images/profile.png
+    - assets/images/nace.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -18,16 +18,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Map<int, Color> colorSwatch = const {
-      50: Color.fromRGBO(21, 34, 56, .1),
-      100: Color.fromRGBO(21, 34, 56, .2),
-      200: Color.fromRGBO(21, 34, 56, .3),
-      300: Color.fromRGBO(21, 34, 56, .4),
-      400: Color.fromRGBO(21, 34, 56, .5),
-      500: Color.fromRGBO(21, 34, 56, .6),
-      600: Color.fromRGBO(21, 34, 56, .7),
-      700: Color.fromRGBO(21, 34, 56, .8),
-      800: Color.fromRGBO(21, 34, 56, .9),
-      900: Color.fromRGBO(21, 34, 56, 1),
+      50: Color.fromRGBO(2, 48, 32, .1),
+      100: Color.fromRGBO(2, 48, 32, .2),
+      200: Color.fromRGBO(2, 48, 32, .3),
+      300: Color.fromRGBO(2, 48, 32, .4),
+      400: Color.fromRGBO(2, 48, 32, .5),
+      500: Color.fromRGBO(2, 48, 32, .6),
+      600: Color.fromRGBO(2, 48, 32, .7),
+      700: Color.fromRGBO(2, 48, 32, .8),
+      800: Color.fromRGBO(2, 48, 32, .9),
+      900: Color.fromRGBO(2, 48, 32, 1),
     };
     ToastContext().init(context);
     return MaterialApp(

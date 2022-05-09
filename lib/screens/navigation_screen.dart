@@ -14,12 +14,15 @@ class NavigationScreen extends StatefulWidget {
 
 class _NavigationScreenState extends State<NavigationScreen> {
   List items = [
-    'Sponsor Opportunities',
-    'Exhibitor Opportunities',
-    'Advertisement Opportunities',
-    'Delegate Opportunities',
-    'Login',
-    'FAQ'
+    {'title': 'Sponsor Opportunities', 'icon': Icons.monetization_on},
+    {'title': 'Exhibitor Opportunities', 'icon': Icons.display_settings},
+    {
+      'title': 'Advertisement Opportunities',
+      'icon': Icons.photo_size_select_actual
+    },
+    {'title': 'Delegate Opportunities', 'icon': Icons.person},
+    {'title': 'Login', 'icon': Icons.login},
+    {'title': 'FAQ', 'icon': Icons.help}
   ];
 
   @override
@@ -62,16 +65,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
                       ),
                     ],
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: const Image(
-                      image: AssetImage(
-                        './assets/icons/menu.png',
-                      ),
-                      width: 24,
-                      color: Colors.white,
-                    ),
-                  ),
+                  Container(),
                 ],
               ),
             ),
@@ -82,50 +76,61 @@ class _NavigationScreenState extends State<NavigationScreen> {
               ),
               height: size.height,
               child: GridView.builder(
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: items.length,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2),
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: GestureDetector(
-                        onTap: () {
-                          if (index == 0) {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const SponsorScreen()));
-                          }
-                          if (index == 1) {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const ExhibitorScreen()));
-                          }
-                          if (index == 2) {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const SouvenirScreen()));
-                          }
-                          if (index == 3) {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const DelegateScreen()));
-                          }
-                          if (index == 4) {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const LoginScreen()));
-                          }
-                        },
-                        child: Card(
-                          color: const Color(0xffffffff),
-                          // color: const Color(0xffd5d5d5),
-                          child: Center(
-                            child: Text(
-                              items[index].toString(),
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: items.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2),
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: GestureDetector(
+                      onTap: () {
+                        if (index == 0) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const SponsorScreen()));
+                        }
+                        if (index == 1) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const ExhibitorScreen()));
+                        }
+                        if (index == 2) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const SouvenirScreen()));
+                        }
+                        if (index == 3) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const DelegateScreen()));
+                        }
+                        if (index == 4) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const LoginScreen()));
+                        }
+                      },
+                      child: Card(
+                        color: const Color(0xffffffff),
+                        // color: const Color(0xffd5d5d5),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            // ,
+                            Icon(
+                              items[index]['icon'],
+                              size: 32,
+                              color: const Color(0xff152238),
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              items[index]['title'].toString(),
                               textAlign: TextAlign.center,
                               // overflow: TextOverfl,
                             ),
-                          ),
+                          ],
                         ),
                       ),
-                    );
-                  }),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),
