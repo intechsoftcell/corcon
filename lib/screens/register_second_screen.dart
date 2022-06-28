@@ -8,7 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import '../utils/common.dart';
 
-class RegisterSecondScreen extends StatefulWidget {
+class RegisterSecondScreen extends StatefulWidget
+ {
   String email;
   String mobile;
   String name;
@@ -49,7 +50,6 @@ class _RegisterSecondScreenState extends State<RegisterSecondScreen> {
 
   Future<void> fetchSymposia() async {
     var url = Uri.parse('${baseUrl}GetSymposiaResult');
-
     var response = await http.get(url);
     if (response.statusCode == 200) {
       final symposiaModel = symposiaModelFromJson(response.body.toString());
@@ -78,7 +78,7 @@ class _RegisterSecondScreenState extends State<RegisterSecondScreen> {
   }
 
   Future<int> insertCorconSymposia(
-      String regId, String symposiaName, String paperTitle) async {
+      String regId, String symposiaName, String paperTitle ) async {
     var url = Uri.parse('${baseUrl}SetSymposiaUserDetails');
     var response = await http.post(url, body: {
       'Reg_Id': regId,
@@ -87,9 +87,11 @@ class _RegisterSecondScreenState extends State<RegisterSecondScreen> {
     });
     final rowModel = singleRowModelFromJson(response.body);
     return rowModel.first.sts;
+    
   }
 
-  Future<int> registerUser(String regId) async {
+  Future<int> registerUser(String regId) async
+   {
     showLoaderDialog(context);
     var url = Uri.parse('${baseUrl}SetRegistration');
     var response = await http.post(url, body: {

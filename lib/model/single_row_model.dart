@@ -8,11 +8,12 @@ List<SingleRowModel> singleRowModelFromJson(String str) => List<SingleRowModel>.
 
 String singleRowModelToJson(List<SingleRowModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class SingleRowModel {
-    SingleRowModel({
+class SingleRowModel 
+{
+    SingleRowModel(
+    {
         required this.sts,
     });
-
     int sts;
 
     factory SingleRowModel.fromJson(Map<String, dynamic> json) => SingleRowModel(
